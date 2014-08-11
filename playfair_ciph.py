@@ -98,33 +98,33 @@ def encrypt(message, key_matrix):
 
 
 
-def decrypt(message, key_matrix):
-	coords = []
-	plaintext = []
-	digraphs = parse_message(message)
+# def decrypt(message, key_matrix):
+# 	coords = []
+# 	plaintext = []
+# 	digraphs = parse_message(message)
 
-	for d in digraphs:
-		swap = []
-		temp = []
-		coords = get_coords(d, key_matrix)
-		if coords[0][0] == coords[1][0]: # digraph lies on same x axis
-			x,y  = ((coords[0][0], (coords[0][1] - 1) % 5))
-			swap.append((x,y))
-			x,y  = ((coords[1][0], (coords[1][1] - 1) % 5))
-			swap.append((x,y))
-		elif coords[0][1] == coords[1][1]: # digraph lies on same y axis
-			x,y  = (((coords[0][0] - 1) % 5), coords[0][1])
-			swap.append((x,y))
-			x,y  = (((coords[1][0] - 1) % 5), coords[1][1])
-			swap.append((x,y))
-		else: # digraph lies on different x & y axis
-			swap.append((coords[0][0], coords[1][1]))
-			swap.append((coords[1][0], coords[0][1]))
+# 	for d in digraphs:
+# 		swap = []
+# 		temp = []
+# 		coords = get_coords(d, key_matrix)
+# 		if coords[0][0] == coords[1][0]: # digraph lies on same x axis
+# 			x,y  = ((coords[0][0], (coords[0][1] - 1) % 5))
+# 			swap.append((x,y))
+# 			x,y  = ((coords[1][0], (coords[1][1] - 1) % 5))
+# 			swap.append((x,y))
+# 		elif coords[0][1] == coords[1][1]: # digraph lies on same y axis
+# 			x,y  = (((coords[0][0] - 1) % 5), coords[0][1])
+# 			swap.append((x,y))
+# 			x,y  = (((coords[1][0] - 1) % 5), coords[1][1])
+# 			swap.append((x,y))
+# 		else: # digraph lies on different x & y axis
+# 			swap.append((coords[0][0], coords[1][1]))
+# 			swap.append((coords[1][0], coords[0][1]))
 
-		for x,y in swap:
-				plaintext.append(key_matrix[x][y])
+# 		for x,y in swap:
+# 				plaintext.append(key_matrix[x][y])
 
-	print "Your decrypted message is: %s " % ''.join(plaintext)
+# 	print "Your decrypted message is: %s " % ''.join(plaintext)
 
 
 
