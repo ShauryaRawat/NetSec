@@ -96,7 +96,7 @@ def encrypt(message, key_matrix):
 
 	print "Your encrypted message is: %s " % ''.join(ciphertext)
 
-
+# The decrypt module is fine and needed - Shaurya
 
 # def decrypt(message, key_matrix):
 # 	coords = []
